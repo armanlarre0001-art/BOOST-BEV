@@ -1,0 +1,59 @@
+[
+  {
+    "_id": "mqw3fo7hafa6x",
+    "paymentStatus": "Paid",
+    "orderStatus": "Pending",
+    "createdAt": "2026-06-27T08:23:58.541Z",
+    "user": "mqw358mmtc3o0",
+    "items": [
+      {
+        "product": "mqw1shpeklurp",
+        "name": "Vortex Energy Volt",
+        "price": 4.5,
+        "quantity": 1,
+        "image": "/assets/energy_volt.png"
+      }
+    ],
+    "totalAmount": 4.5,
+    "shippingAddress": {
+      "name": "test",
+      "address": "qwertyuiop",
+      "city": "ldh",
+      "postalCode": "11111",
+      "country": "test"
+    },
+    "paymentMethod": "Stripe"
+  },
+  {
+    "_id": "mqxs4f3bpqycw",
+    "paymentStatus": "Paid",
+    "orderStatus": "Pending",
+    "createdAt": "2026-06-28T12:42:50.087Z",
+    "user": "mqw358mmtc3o0",
+    "items": [
+      {
+        "product": "mqw1shpeklurp",
+        "name": "Vortex Energy Volt",
+        "price": 4.5,
+        "quantity": 1,
+        "image": "/assets/energy_volt.png"
+      },
+      {
+        "product": "mqw1shpcsvyzl",
+        "name": "Boost Kola Premium",
+        "price": 3.49,
+        "quantity": 1,
+        "image": "/assets/cola_premium.png"
+      }
+    ],
+    "totalAmount": 7.99,
+    "shippingAddress": {
+      "name": "jJaneJane Doe",
+      "address": "123 Cyber Street",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": "United States"
+    },
+    "paymentMethod": "Stripe"
+  }
+]

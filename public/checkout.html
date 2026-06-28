@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Securely complete your beverage purchase with BoostBev. Multiple checkout payment gateways available.">
+  <title>BoostBev | Secure Checkout</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styling Sheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .checkout-section {
+      padding: 120px 0 80px;
+      min-height: 90vh;
+    }
+    .checkout-grid-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+    }
+    .card-bg {
+      background: var(--card-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .checkout-title {
+      font-size: 24px;
+      border-bottom: 1px solid var(--panel-border);
+      padding-bottom: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .checkout-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .checkout-form-grid .full {
+      grid-column: span 2;
+    }
+    .form-group-checkout {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .checkout-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .checkout-input {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--panel-border);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: var(--border-radius-sm);
+      font-size: 14px;
+      transition: var(--transition-fast);
+      width: 100%;
+    }
+    .checkout-input:focus {
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-glow-accent);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .summary-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      border-top: 1px solid var(--panel-border);
+      padding-top: 16px;
+      margin-top: 8px;
+    }
+    @media (max-width: 900px) {
+      .checkout-grid-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clean Minimal Header -->
+  <header>
+    <div class="container nav-container" style="height: 70px;">
+      <a href="/" class="logo" style="font-size: 24px;"><i class="fas fa-bolt"></i> BOOST<span>BEV</span></a>
+      <a href="/" style="font-size: 14px; font-weight: 600; color: var(--text-muted);"><i class="fas fa-arrow-left"></i> Return to Shop</a>
+    </div>
+  </header>
+
+  <section class="checkout-section">
+    <div class="container">
+      <div class="checkout-grid-layout">
+        
+        <!-- Left Forms Column -->
+        <form id="checkout-form" style="display: flex; flex-direction: column; gap: 32px;">
+          
+          <!-- 1. Shipping Details -->
+          <div class="card-bg">
+            <h3 class="checkout-title"><i class="fas fa-truck" style="color: var(--color-secondary);"></i> Shipping Address</h3>
+            
+            <div class="checkout-form-grid">
+              <div class="form-group-checkout full">
+                <label class="checkout-label" for="shipping-name">Full Name</label>
+                <input class="checkout-input" type="text" id="shipping-name" placeholder="John Doe" required>
+              </div>
+
+              <div class="form-group-checkout full">
+                <label class="checkout-label" for="shipping-address">Delivery Address</label>
+                <input class="checkout-input" type="text" id="shipping-address" placeholder="Apt 4B, 123 Cyber St" required>
+              </div>
+
+              <div class="form-group-checkout">
+                <label class="checkout-label" for="shipping-city">City</label>
+                <input class="checkout-input" type="text" id="shipping-city" placeholder="New York" required>
+              </div>
+
+              <div class="form-group-checkout">
+                <label class="checkout-label" for="shipping-postal">Postal Code</label>
+                <input class="checkout-input" type="text" id="shipping-postal" placeholder="10001" required>
+              </div>
+
+              <div class="form-group-checkout full">
+                <label class="checkout-label" for="shipping-country">Country</label>
+                <input class="checkout-input" type="text" id="shipping-country" placeholder="United States" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Secure Card Payment -->
+          <div class="card-bg">
+            <h3 class="checkout-title"><i class="fas fa-shield-alt" style="color: var(--color-accent);"></i> Secure Payment</h3>
+            
+            <div class="checkout-form-grid">
+              <div class="form-group-checkout full">
+                <label class="checkout-label" for="card-name">Cardholder Name</label>
+                <input class="checkout-input" type="text" id="card-name" placeholder="JOHN DOE" required>
+              </div>
+
+              <div class="form-group-checkout full">
+                <label class="checkout-label" for="card-number">Card Number</label>
+                <input class="checkout-input" type="text" id="card-number" placeholder="4000 1234 5678 9010" maxlength="19" required>
+              </div>
+
+              <div class="form-group-checkout">
+                <label class="checkout-label" for="card-expiry">Expiry Date</label>
+                <input class="checkout-input" type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+              </div>
+
+              <div class="form-group-checkout">
+                <label class="checkout-label" for="card-cvc">CVC Code</label>
+                <input class="checkout-input" type="password" id="card-cvc" placeholder="•••" maxlength="3" required>
+              </div>
+            </div>
+
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-top: 8px;">
+              <i class="fas fa-lock" style="color: var(--color-secondary);"></i> 
+              Your connection is encrypted using SSL. Payment details are processed securely and will never be stored on our servers.
+            </p>
+          </div>
+        </form>
+
+        <!-- Right Side Checkout Breakdown Summary -->
+        <div class="card-bg" style="height: fit-content; gap: 20px;">
+          <h3 class="checkout-title" style="margin-bottom: 0;"><i class="fas fa-receipt" style="color: var(--color-primary);"></i> Cargo Summary</h3>
+          
+          <div id="checkout-items-list" style="max-height: 300px; overflow-y: auto; padding-right: 8px;">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+            <div class="summary-row">
+              <span>Items Subtotal:</span>
+              <span id="summary-subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping Fee:</span>
+              <span id="summary-shipping">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Est. Tax (8%):</span>
+              <span id="summary-tax">$0.00</span>
+            </div>
+            <div class="summary-total-row">
+              <span>Grand Total:</span>
+              <span id="summary-total" style="color: var(--color-primary);">$0.00</span>
+            </div>
+          </div>
+
+          <button type="submit" form="checkout-form" id="submit-order-btn" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding: 16px;">
+            <i class="fas fa-credit-card"></i> Pay & Authorize Order
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/checkout.js"></script>
+  <script>
+    // Format card number with spaces automatically
+    const cardInput = document.getElementById('card-number');
+    if (cardInput) {
+      cardInput.addEventListener('input', (e) => {
+        let val = e.target.value.replace(/\D/g, '');
+        let formatted = '';
+        for (let i = 0; i < val.length; i++) {
+          if (i > 0 && i % 4 === 0) {
+            formatted += ' ';
+          }
+          formatted += val[i];
+        }
+        e.target.value = formatted;
+      });
+    }
+
+    // Format expiry date with slash automatically
+    const expiryInput = document.getElementById('card-expiry');
+    if (expiryInput) {
+      expiryInput.addEventListener('input', (e) => {
+        let val = e.target.value.replace(/\D/g, '');
+        if (val.length >= 2) {
+          e.target.value = val.slice(0, 2) + '/' + val.slice(2, 4);
+        } else {
+          e.target.value = val;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

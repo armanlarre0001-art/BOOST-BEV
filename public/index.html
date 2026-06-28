@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop premium, futuristic soft drinks and energy drinks at BoostBev. Low calorie, sugar-free, and exclusive limited-edition drops.">
+  <title>BoostBev | Premium E-Commerce Beverage Store</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styling sheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <i class="fas fa-bolt"></i> BOOST<span>BEV</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/" class="active">Shop</a></li>
+        <li><a href="#about-us">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <div class="search-bar-container">
+        <i class="fas fa-search" style="color: var(--text-muted);"></i>
+        <input type="text" id="catalog-search" placeholder="Search drinks...">
+      </div>
+
+      <div class="nav-actions">
+        <!-- Light / Dark Theme toggle -->
+        <button class="action-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <!-- Cart drawer toggle -->
+        <button class="action-btn" id="cart-btn" title="View Shopping Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="badge" id="cart-badge">0</span>
+        </button>
+
+        <!-- Profile drop triggers -->
+        <div class="user-menu-container">
+          <button class="action-btn" id="profile-btn" title="Account Menu">
+            <i class="fas fa-user-circle"></i>
+          </button>
+          
+          <div class="user-profile-menu" id="profile-dropdown-menu">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Epic Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge">NEW DROP: ULTRA VOLT AVAILABLE</span>
+        <h1 class="hero-title">
+          Fuel Your Focus. 
+          <span>Supercharge Your Day.</span>
+        </h1>
+        <p class="hero-desc">
+          Experience the next generation of beverage energy. Crafted with raw organic ingredients, natural cognitive caffeine, and premium carbonated bubbles.
+        </p>
+        <div class="hero-actions">
+          <a href="#shop-catalog" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> Shop Catalog
+          </a>
+          <a href="#about-us" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+      
+      <div class="hero-img-container">
+        <div class="hero-glow"></div>
+        <!-- Display our generated primary energy volt drink -->
+        <img src="/assets/energy_volt.png" alt="BoostBev Volt Can" onerror="this.src='/assets/placeholder-drink.png'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Catalog Section -->
+  <section class="shop-section" id="shop-catalog">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-info">
+          <span class="section-subtitle">Premium Catalog</span>
+          <h2 class="section-title">Explore Flavors</h2>
+        </div>
+      </div>
+
+      <!-- Categories Navigation Tab list -->
+      <ul class="categories-tabs" id="category-filter-tabs">
+        <!-- Rendered dynamically -->
+      </ul>
+
+      <!-- Filters & Sortings bar -->
+      <div class="catalog-controls">
+        <div class="filters-group">
+          <label class="checkbox-filter">
+            <input type="checkbox" id="filter-sugarfree">
+            <span>Sugar Free</span>
+          </label>
+          <label class="checkbox-filter">
+            <input type="checkbox" id="filter-limited">
+            <span>Limited Edition</span>
+          </label>
+        </div>
+
+        <div class="sort-group">
+          <label for="catalog-sort">Sort By:</label>
+          <select id="catalog-sort" class="sort-select">
+            <option value="featured">Featured Drops</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Dynamic Catalog Products grid -->
+      <div class="products-grid" id="catalog-products-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-section" id="about-us">
+    <div class="container about-grid">
+      <div class="hero-img-container">
+        <img src="/assets/citrus_zero.png" alt="Clean Formulation Can" style="height: 380px;" onerror="this.src='/assets/placeholder-drink.png'">
+      </div>
+      <div class="about-info">
+        <span class="section-subtitle">OUR FORMULATION</span>
+        <h2 class="section-title">Futuristic Energy. Clean Elements.</h2>
+        <p>
+          BoostBev was founded with a singular mission: to eliminate the chemical crash standard energy sodas leave behind. We combine natural, organic focus-boosters like ginseng and L-theanine with pristine, refreshing carbonated springs to deliver physical endurance and mental clarity.
+        </p>
+
+        <div class="about-bullets">
+          <div class="bullet-item">
+            <div class="bullet-icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="bullet-title">Zero Crash</h4>
+            <p style="font-size: 13px;">Sustainable energy curves without artificial nervous jitters.</p>
+          </div>
+          <div class="bullet-item">
+            <div class="bullet-icon"><i class="fas fa-leaf"></i></div>
+            <h4 class="bullet-title">Natural Infusions</h4>
+            <p style="font-size: 13px;">Extracts sourced from clean organic ginseng and green tea roots.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="section-subtitle">TESTIMONIALS</span>
+        <h2 class="section-title">Voted #1 Gamer Fuel</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"BoostBev is absolutely mental. The Ultra Volt keeps me dialed in during long streaming marathons without any of that nasty sugar sluggishness!"</p>
+          <div class="review-user">
+            <div class="review-user-avatar">MK</div>
+            <div class="review-user-info">
+              <h4>Marcus K.</h4>
+              <span>Professional Streamer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"Citrus Rush Zero is my daily go-to. It's refreshing, fizzy, completely calorie-free, and leaves you feeling genuinely refreshed."</p>
+          <div class="review-user">
+            <div class="review-user-avatar">SR</div>
+            <div class="review-user-info">
+              <h4>Sarah R.</h4>
+              <span>Fitness Coach</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+          <p class="review-text">"The Limited Galactic Grape edition drops are crazy. Best grape flavor I've ever had. Highly recommend picking up a flat when they drop."</p>
+          <div class="review-user">
+            <div class="review-user-avatar">JL</div>
+            <div class="review-user-info">
+              <h4>Jon L.</h4>
+              <span>Software Engineer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="section-subtitle">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What makes BoostBev different from other energy sodas?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Unlike traditional options loaded with processed sugars and chemicals, BoostBev focuses on sustained energy. We combine clean caffeine with natural ingredients like organic ginseng, B-vitamins, and L-theanine to provide smooth focus without the crash.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How fast is shipping?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Orders are processed within 24 hours. Standard shipping typically takes 2-4 business days. Free shipping applies to all orders above $30!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer sugar-free variants?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We have an entire catalog category labeled 'Sugar-Free' including Citrus Rush Zero and Frostbite Glacier Zero which carry zero calories and zero sugars.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Area -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <a href="#" class="logo"><i class="fas fa-bolt"></i> BOOST<span>BEV</span></a>
+          <p>Supercharging physical stamina and mental focus with clean, futuristic formulations.</p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#shop-catalog">Products</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms & Privacy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Join the drop list to be notified about rare, limited-edition beverage releases.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); window.showToast('Subscribed to drop list!'); this.reset();">
+            <input type="email" placeholder="Enter email..." required>
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BoostBev Inc. All rights reserved.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- Modals and Drawers --- -->
+
+  <!-- 1. Quick View Product Modal -->
+  <div class="modal-overlay" id="quickview-modal-overlay">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeQuickPreviewModal()">&times;</span>
+      
+      <div class="qv-grid">
+        <div class="qv-img-container">
+          <img id="qv-image" src="" alt="Beverage Preview">
+        </div>
+        <div class="qv-body">
+          <div class="qv-badges" id="qv-badges-box">
+            <!-- Badges render here -->
+          </div>
+          <h2 class="qv-title" id="qv-title">Beverage Name</h2>
+          <span class="qv-price" id="qv-price">$0.00</span>
+          
+          <p id="qv-desc">Detailed beverage formulation description goes here.</p>
+          
+          <div>
+            <span style="font-size: 13px; font-weight: 700; color: var(--text-muted);">AVAILABILITY:</span>
+            <span id="qv-stock-status" class="status-tag">In Stock</span>
+          </div>
+
+          <div class="qv-action-row">
+            <div class="quantity-selector">
+              <button class="qty-btn" onclick="adjustQvQuantity(-1)">-</button>
+              <input class="qty-input" type="text" id="qv-qty-input" readonly value="1">
+              <button class="qty-btn" onclick="adjustQvQuantity(1)">+</button>
+            </div>
+
+            <button class="btn btn-primary" id="qv-add-cart-btn" style="flex: 1;">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+          </div>
+
+          <button class="btn btn-secondary" id="qv-wishlist-btn" style="margin-top: 8px;">
+            <i class="far fa-heart"></i> Add to Wishlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Shopping Cart Drawer slider -->
+  <div class="drawer-backdrop" id="drawer-backdrop-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer-slider">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <i class="fas fa-shopping-bag"></i> Your Cargo <span id="cart-count-desc" style="font-size: 14px; color: var(--text-muted); font-weight: 500;">(0 items)</span>
+      </h3>
+      <span class="cart-close" id="cart-close-btn">&times;</span>
+    </div>
+
+    <!-- Items go here -->
+    <div class="cart-drawer-body" id="cart-drawer-items">
+      <!-- Generated via JS -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Delivery Fee:</span>
+        <span style="color: var(--color-secondary);">FREE (over $30)</span>
+      </div>
+      <div class="cart-summary-row cart-summary-total">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-price">$0.00</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='/checkout.html'">
+        Proceed to Checkout <i class="fas fa-arrow-right"></i>
+      </button>
+      <button class="btn btn-secondary" style="width: 100%; padding: 8px;" onclick="window.clearCart()">
+        Clear Cart
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

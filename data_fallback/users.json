@@ -1,0 +1,11 @@
+[
+  {
+    "_id": "mqw358mmtc3o0",
+    "wishlist": [],
+    "createdAt": "2026-06-27T08:15:51.790Z",
+    "name": "Admin Test",
+    "email": "admin@boostbev.com",
+    "password": "$2a$10$uWs/eW1O7hQCyd9rgzRcruyprNaIG7TsJebQh5xs/O/07QCQBfKi.",
+    "role": "admin"
+  }
+]

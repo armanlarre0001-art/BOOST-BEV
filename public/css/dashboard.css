@@ -1,0 +1,357 @@
+@import url('./variables.css');
+
+.admin-body {
+  background: var(--bg-gradient);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar Navigation */
+.admin-sidebar {
+  width: 260px;
+  background: var(--panel-bg-solid);
+  border-right: 1px solid var(--panel-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebar-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-item a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--border-radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.sidebar-item a:hover,
+.sidebar-item.active a {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+.sidebar-item.active a {
+  color: var(--color-accent);
+  border-left: 3px solid var(--color-accent);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 24px;
+  border-top: 1px solid var(--panel-border);
+}
+
+/* Main Dashboard Panel */
+.admin-main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-title-group h1 {
+  font-size: 32px;
+}
+
+.admin-title-group p {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Stats Summary Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--card-shadow);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.stat-card.revenue .stat-icon {
+  background: rgba(255, 42, 84, 0.08);
+  color: var(--color-primary);
+}
+
+.stat-card.orders .stat-icon {
+  background: rgba(57, 255, 20, 0.08);
+  color: var(--color-secondary);
+}
+
+/* Main Content Views */
+.dashboard-view {
+  display: none;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dashboard-view.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Data Tables */
+.table-container {
+  background: var(--card-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.table-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--panel-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.table-header h3 {
+  font-size: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+th {
+  background: rgba(0,0,0,0.1);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-cell img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--border-radius-sm);
+  padding: 2px;
+}
+
+/* Action Buttons */
+.action-btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255,255,255,0.04);
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+
+.btn-icon.edit:hover {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--color-accent);
+}
+
+.btn-icon.delete:hover {
+  background: rgba(255, 42, 84, 0.15);
+  color: var(--color-primary);
+}
+
+/* Forms & Inputs in Dashboards */
+.admin-modal {
+  max-width: 550px;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.admin-form-grid .full-width {
+  grid-column: span 2;
+}
+
+/* Dashboard status tags */
+.status-tag {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-paid {
+  background: rgba(57, 255, 20, 0.15);
+  color: var(--color-secondary);
+}
+
+.status-pending {
+  background: rgba(255, 165, 0, 0.15);
+  color: #ffa500;
+}
+
+.status-failed {
+  background: rgba(255, 42, 84, 0.15);
+  color: var(--color-primary);
+}
+
+.status-shipped {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--color-accent);
+}
+
+.status-delivered {
+  background: rgba(57, 255, 20, 0.15);
+  color: var(--color-secondary);
+}
+
+/* Responsive Dashboard */
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    width: 80px;
+  }
+  .sidebar-header h2,
+  .sidebar-item span,
+  .sidebar-footer span {
+    display: none;
+  }
+  .admin-main {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-body {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+  .sidebar-menu {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  .admin-main {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

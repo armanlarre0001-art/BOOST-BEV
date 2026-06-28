@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "mqw1shp9juyyx",
+    "slug": "soft-drinks",
+    "createdAt": "2026-06-27T07:37:57.405Z",
+    "name": "Soft Drinks",
+    "description": "Glow-up sodas and carbonated refreshments"
+  },
+  {
+    "_id": "mqw1shpafsoef",
+    "slug": "energy-drinks",
+    "createdAt": "2026-06-27T07:37:57.406Z",
+    "name": "Energy Drinks",
+    "description": "High caffeine and focus enhancers"
+  },
+  {
+    "_id": "mqw1shpb7q2hf",
+    "slug": "sugar-free",
+    "createdAt": "2026-06-27T07:37:57.407Z",
+    "name": "Sugar-Free",
+    "description": "Zero sugar, maximum refreshment"
+  },
+  {
+    "_id": "mqw1shpcsloox",
+    "slug": "limited-editions",
+    "createdAt": "2026-06-27T07:37:57.408Z",
+    "name": "Limited Editions",
+    "description": "Rare drops and collectible cans"
+  }
+]

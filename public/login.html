@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign up or login to BoostBev to track orders, manage your wishlist, and get access to limited drops.">
+  <title>BoostBev | Secure Credentials Panel</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styling Sheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper">
+    <!-- 1. LOGIN SHEET -->
+    <div class="auth-panel active" id="panel-login">
+      <div class="auth-header">
+        <a href="/" class="auth-logo"><i class="fas fa-bolt"></i> BOOST<span>BEV</span></a>
+        <h2 class="auth-title">Welcome Back</h2>
+        <p class="auth-subtitle">Login to access your personalized energy feed</p>
+      </div>
+
+      <form class="auth-form" id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email Address</label>
+          <div class="form-input-container">
+            <i class="fas fa-envelope"></i>
+            <input class="form-input" type="email" id="login-email" placeholder="name@domain.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <div class="form-input-container">
+            <i class="fas fa-lock"></i>
+            <input class="form-input" type="password" id="login-password" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" checked>
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link" id="switch-to-forgot">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-btn">
+          <i class="fas fa-sign-in-alt"></i> Login Session
+        </button>
+      </form>
+
+      <div class="auth-switch">
+        Don't have an account? <a href="#" id="switch-to-register">Sign Up</a>
+      </div>
+    </div>
+
+    <!-- 2. REGISTER SHEET -->
+    <div class="auth-panel" id="panel-register">
+      <div class="auth-header">
+        <a href="/" class="auth-logo"><i class="fas fa-bolt"></i> BOOST<span>BEV</span></a>
+        <h2 class="auth-title">Create Account</h2>
+        <p class="auth-subtitle">Join the exclusive beverage drop community</p>
+      </div>
+
+      <form class="auth-form" id="register-form">
+        <div class="form-group">
+          <label class="form-label" for="register-name">Full Name</label>
+          <div class="form-input-container">
+            <i class="fas fa-user"></i>
+            <input class="form-input" type="text" id="register-name" placeholder="John Doe" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-email">Email Address</label>
+          <div class="form-input-container">
+            <i class="fas fa-envelope"></i>
+            <input class="form-input" type="email" id="register-email" placeholder="name@domain.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-password">Password</label>
+          <div class="form-input-container">
+            <i class="fas fa-lock"></i>
+            <input class="form-input" type="password" id="register-password" placeholder="Min. 6 characters" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-confirm">Confirm Password</label>
+          <div class="form-input-container">
+            <i class="fas fa-lock"></i>
+            <input class="form-input" type="password" id="register-confirm" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-btn">
+          <i class="fas fa-user-plus"></i> Create Account
+        </button>
+      </form>
+
+      <div class="auth-switch">
+        Already have an account? <a href="#" id="switch-to-login">Login</a>
+      </div>
+    </div>
+
+    <!-- 3. FORGOT PASSWORD SHEET -->
+    <div class="auth-panel" id="panel-forgot">
+      <div class="auth-header">
+        <a href="/" class="auth-logo"><i class="fas fa-bolt"></i> BOOST<span>BEV</span></a>
+        <h2 class="auth-title">Reset Password</h2>
+        <p class="auth-subtitle">Enter your email to receive a mock verification code</p>
+      </div>
+
+      <form class="auth-form" id="forgot-form">
+        <div class="form-group">
+          <label class="form-label" for="forgot-email">Email Address</label>
+          <div class="form-input-container">
+            <i class="fas fa-envelope"></i>
+            <input class="form-input" type="email" id="forgot-email" placeholder="name@domain.com" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-btn">
+          <i class="fas fa-paper-plane"></i> Send Verification Code
+        </button>
+      </form>
+
+      <div class="auth-switch">
+        Remember your password? <a href="#" id="switch-forgot-to-login">Login</a>
+      </div>
+    </div>
+
+    <!-- 4. RESET OVERRIDE SHEET -->
+    <div class="auth-panel" id="panel-reset">
+      <div class="auth-header">
+        <a href="/" class="auth-logo"><i class="fas fa-bolt"></i> BOOST<span>BEV</span></a>
+        <h2 class="auth-title">Set New Password</h2>
+        <p class="auth-subtitle">Enter the code logged in the server terminal log to reset</p>
+      </div>
+
+      <form class="auth-form" id="reset-form">
+        <div class="form-group">
+          <label class="form-label" for="reset-code">Verification Code</label>
+          <div class="form-input-container">
+            <i class="fas fa-shield-alt"></i>
+            <input class="form-input" type="text" id="reset-code" placeholder="Enter 6-digit code" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reset-password">New Password</label>
+          <div class="form-input-container">
+            <i class="fas fa-lock"></i>
+            <input class="form-input" type="password" id="reset-password" placeholder="Min. 6 characters" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-btn">
+          <i class="fas fa-key"></i> Update Password
+        </button>
+      </form>
+
+      <div class="auth-switch">
+        Cancel and return? <a href="#" id="switch-reset-to-login">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
