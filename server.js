@@ -26,6 +26,24 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Lazy Database Initialization Middleware for Serverless Environments
+let dbInitialized = false;
+let dbInitializationPromise = null;
+
+const ensureDbConnected = async (req, res, next) => {
+  if (!dbInitialized) {
+    if (!dbInitializationPromise) {
+      dbInitializationPromise = initializeDatabase().then(() => {
+        dbInitialized = true;
+      });
+    }
+    await dbInitializationPromise;
+  }
+  next();
+};
+
+app.use(ensureDbConnected);
+
 // Serve Static Frontend Assets
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -42,12 +60,17 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start Server
-app.listen(PORT, async () => {
-  await initializeDatabase();
-  console.log(`\n======================================================`);
-  console.log(`BoostBev Server is running on port ${PORT}`);
-  console.log(`Mode: http://localhost:${PORT}`);
-  console.log(`Database Mode: ${getMongoStatus() ? 'MongoDB (Mongoose)' : 'Local JSON Fallback'}`);
-  console.log(`======================================================\n`);
-});
+// Start Server locally if not running in Vercel Serverless environment
+if (!process.env.VERCEL) {
+  app.listen(PORT, async () => {
+    await initializeDatabase();
+    console.log(`\n======================================================`);
+    console.log(`BoostBev Server is running on port ${PORT}`);
+    console.log(`Mode: http://localhost:${PORT}`);
+    console.log(`Database Mode: ${getMongoStatus() ? 'MongoDB (Mongoose)' : 'Local JSON Fallback'}`);
+    console.log(`======================================================\n`);
+  });
+}
+
+module.exports = app;
+
