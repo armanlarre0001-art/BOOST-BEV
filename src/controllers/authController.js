@@ -217,7 +217,9 @@ const resetPassword = async (req, res) => {
           list[idx].password = await bcrypt.hash(password, salt);
           const path = require('path');
           const fs = require('fs').promises;
-          const DATA_DIR = path.join(__dirname, '..', '..', 'data_fallback');
+          const DATA_DIR = process.env.VERCEL
+            ? path.join('/tmp', 'data_fallback')
+            : path.join(__dirname, '..', '..', 'data_fallback');
           await fs.writeFile(path.join(DATA_DIR, 'users.json'), JSON.stringify(list, null, 2), 'utf8');
         }
       }

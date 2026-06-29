@@ -2,7 +2,9 @@ const fs = require('fs').promises;
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const DATA_DIR = path.join(__dirname, '..', '..', 'data_fallback');
+const DATA_DIR = process.env.VERCEL
+  ? path.join('/tmp', 'data_fallback')
+  : path.join(__dirname, '..', '..', 'data_fallback');
 
 // Helper to ensure data files exist
 const initFallbackDB = async () => {
