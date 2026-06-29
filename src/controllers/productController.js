@@ -3,6 +3,7 @@ const dbHelper = require('../config/dbHelper');
 // Mock Product Seeding Data
 const demoProducts = [
   {
+    _id: "60c72b2f9b1d8a25c8cf3f01",
     name: "Boost Kola Premium",
     description: "Classic cola taste supercharged with natural caffeine, organic cane sugar, and ginseng extracts for an instantaneous focus surge.",
     price: 3.49,
@@ -14,6 +15,7 @@ const demoProducts = [
     isLimitedEdition: false
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f02",
     name: "Vortex Energy Volt",
     description: "Unleash the ultimate wave of electrical current. Powered by 160mg caffeine, taurine, and high B-Vitamin complexes.",
     price: 4.29,
@@ -25,6 +27,7 @@ const demoProducts = [
     isLimitedEdition: false
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f03",
     name: "Citrus Rush Zero",
     description: "Explosive, tangy lemon-lime splash with zero sugar, zero calories, and maximum refreshment to keep your vibes active.",
     price: 2.99,
@@ -36,6 +39,7 @@ const demoProducts = [
     isLimitedEdition: false
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f04",
     name: "Galactic Grape Supernova",
     description: "An interplanetary burst of Concord grape combined with green tea extract and L-theanine for jitter-free physical stamina.",
     price: 4.99,
@@ -47,6 +51,7 @@ const demoProducts = [
     isLimitedEdition: true
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f05",
     name: "Neon Lime Punch",
     description: "Electric lime punch with a smooth sparkling base, offering a highly sweet, sour, and punchy finish.",
     price: 3.19,
@@ -58,6 +63,7 @@ const demoProducts = [
     isLimitedEdition: false
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f06",
     name: "Ruby Dragon Fruit Energy",
     description: "Exotic dragon fruit flavor combined with raw green coffee beans for sustained energy, and a clean crisp tropical aftertaste.",
     price: 4.49,
@@ -69,6 +75,7 @@ const demoProducts = [
     isLimitedEdition: false
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f07",
     name: "Frostbite Glacier Zero",
     description: "Sub-zero ice berry cooling effect, completely sugar-free. Formulated with electrolytes to keep your hydration high.",
     price: 3.29,
@@ -80,6 +87,7 @@ const demoProducts = [
     isLimitedEdition: false
   },
   {
+    _id: "60c72b2f9b1d8a25c8cf3f08",
     name: "Cyber Punch Eclipse",
     description: "Dark berry, cherry, and blackcurrant fusion. Released under limited quantities for esports tournament champions.",
     price: 5.49,
