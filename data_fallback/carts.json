@@ -1,8 +1,17 @@
 [
   {
-    "_id": "mqxs798zfvtdp",
+    "_id": "mqxw9xmod2s7k",
     "user": "mqw358mmtc3o0",
-    "items": [],
-    "updatedAt": "2026-06-28T12:45:02.483Z"
+    "items": [
+      {
+        "product": "mqw1shpcsvyzl",
+        "quantity": 2
+      },
+      {
+        "product": "mqw3aflrt0w0i",
+        "quantity": 1
+      }
+    ],
+    "updatedAt": "2026-06-28T14:39:05.856Z"
   }
 ]
